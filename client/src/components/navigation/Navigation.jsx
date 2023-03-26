@@ -1,5 +1,3 @@
-export default function Navigation(){
-    return (
-        <nav>Navigation</nav>
-    )
+export default function Navigation() {
+  return <nav>Navigation</nav>;
 }
