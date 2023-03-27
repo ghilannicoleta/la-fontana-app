@@ -14,6 +14,11 @@ pentru a trage local ultimile schimbari in branch-ul main
 
 cu acsta comanda creem branch nou, astai stuctura cum numim un branch, exemplu: nicoleta/init-repo
 
+### pina a face git add ruleaza comenzile:
+
+npm run lint:fix
+npm run format
+
 ### 5. git add .
 
 adaugam fisierele noi/modificate in commit
