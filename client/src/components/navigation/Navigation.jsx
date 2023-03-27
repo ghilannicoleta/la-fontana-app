@@ -37,12 +37,6 @@ export default function Navigation() {
       >
         Login
       </button>
-      <button
-        type="button"
-        className="italic ... hover:text-yellow-300 delay-150"
-      >
-        Cart
-      </button>
     </nav>
   );
 }
