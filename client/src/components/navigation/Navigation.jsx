@@ -1,6 +1,6 @@
-import Login from "./login";
+import Login from "./Login";
 
-import Cart from "./cart";
+import Cart from "./Cart";
 
 export default function Navigation() {
   return (
