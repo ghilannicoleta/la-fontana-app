@@ -1,39 +1,15 @@
 import LoginButton from "./LoginButton";
 import CartButton from "./CartButton";
+import Button from "./Button";
 
 export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 flex justify-center space-x-24 bg-stone-900 bg-opacity-75 p-16 text-white">
-      <button
-        type="button"
-        className="... italic delay-150 hover:text-yellow-300"
-      >
-        Menu
-      </button>
-      <button
-        type="button"
-        className="... italic delay-150 hover:text-yellow-300"
-      >
-        Shop
-      </button>
-      <button
-        type="button"
-        className="... italic delay-150 hover:text-yellow-300"
-      >
-        Restaurants
-      </button>
-      <button
-        type="button"
-        className="... italic delay-150 hover:text-yellow-300"
-      >
-        Delivery
-      </button>
-      <button
-        type="button"
-        className="... italic delay-150 hover:text-yellow-300"
-      >
-        Contacts
-      </button>
+      <Button title="Menu" />
+      <Button title="Shop" />
+      <Button title="Restaurants" />
+      <Button title="Delivery" />
+      <Button title="Contacts" />
       <LoginButton />
       <CartButton />
     </nav>
