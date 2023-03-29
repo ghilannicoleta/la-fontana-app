@@ -39,7 +39,7 @@ export default function Slide() {
   }, [activeSlideIndex, handleNextSlide]);
 
   return (
-    <div className="absolute top-0 flex h-screen w-screen">
+    <div className="-mt-40 flex h-screen w-screen">
       {arrSlides.map((slide, index) => (
         <img
           src={slide.img}
