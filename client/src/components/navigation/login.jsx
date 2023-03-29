@@ -4,7 +4,7 @@ export default function Login() {
       type="button"
       className="italic ... hover:text-yellow-300 delay-150"
     >
-      Login
+      Login Component
     </button>
   );
 }
