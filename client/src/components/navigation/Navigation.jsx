@@ -1,5 +1,5 @@
-import Login from "./Login";
-import Cart from "./Cart";
+import LoginButton from "./LoginButton";
+import CartButton from "./CartButton";
 
 export default function Navigation() {
   return (
@@ -34,8 +34,8 @@ export default function Navigation() {
       >
         Contacts
       </button>
-      <Login />
-      <Cart />
+      <LoginButton />
+      <CartButton />
     </nav>
   );
 }
