@@ -53,14 +53,14 @@ export default function Slide() {
 
       <button
         type="button"
-        className="absolute left-16 top-1/2 text-7xl text-white"
+        className="text-white absolute left-16 top-1/2 text-7xl"
         onClick={() => handleNextSlide(activeSlideIndex - 1)}
       >
         &#10094;
       </button>
       <button
         type="button"
-        className="absolute right-16 top-1/2  text-7xl text-white"
+        className="text-white absolute right-16  top-1/2 text-7xl"
         onClick={() => handleNextSlide(activeSlideIndex + 1)}
       >
         &#10095;
