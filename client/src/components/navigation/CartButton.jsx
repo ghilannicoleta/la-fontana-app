@@ -2,7 +2,7 @@ export default function CartButton() {
   return (
     <button
       type="button"
-      className="... italic delay-150 hover:text-yellow-300"
+      className="italic transition  hover:text-colorYellow hover:delay-100"
     >
       Cart
     </button>
