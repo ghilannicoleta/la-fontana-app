@@ -110,7 +110,7 @@ export default function Content() {
   ];
 
   return itemsList.map((product) => (
-    <div className="mx-auto w-4/5">
+    <div className="mx-auto w-8/12">
       <div className="border-gray-500 flex justify-between border-b pb-4 pt-10">
         <div className="text-4xl font-bold">{product.title}</div>
         <a href="replace" className="mt-4">
