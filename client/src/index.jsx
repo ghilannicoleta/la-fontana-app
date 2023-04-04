@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./routes/Error-page";
 import MenuPage from "./routes/MenuPage";
+import DeliveryPage from "./routes/DeliveryPage";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
   {
     path: "/menu",
     element: <MenuPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/delivery",
+    element: <DeliveryPage />,
     errorElement: <ErrorPage />,
   },
 ]);
