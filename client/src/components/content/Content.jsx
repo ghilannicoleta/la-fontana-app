@@ -110,7 +110,7 @@ export default function Content() {
   ];
 
   return itemsList.map((product) => (
-    <div className="mx-auto w-8/12">
+    <div className="mx-auto w-5/6">
       <div className="border-gray-500 flex justify-between border-b pb-4 pt-10">
         <div className="text-4xl font-bold">{product.title}</div>
         <a href="replace" className="mt-4">
@@ -118,7 +118,7 @@ export default function Content() {
           GO TO MENU {product.title.toUpperCase()}
         </a>
       </div>
-      <div className="flex pt-10">
+      <div className="grid grid-cols-5 gap-1 pt-10">
         {product.products.map((item) => (
           <ItemCard item={item} />
         ))}
