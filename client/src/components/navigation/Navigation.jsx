@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginButton from "./LoginButton";
-import CartButton from "./CartButton";
 import Button from "./Button";
 import logo from "../../assets/pizza.png";
 
