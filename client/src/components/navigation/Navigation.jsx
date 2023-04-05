@@ -14,8 +14,8 @@ export default function Navigation() {
 
   return (
     <div className="sticky top-0 z-50 bg-stone bg-opacity-80">
-      <nav className="flex justify-between items-center px-4 py-3 md:px-8 md:py-4">
-        <div className="w-16 lg:w-32 ml-9">
+      <nav className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4">
+        <div className="ml-9 w-16 lg:w-32">
           <Link to="/">
             <img alt="Logo" src={logo} />
           </Link>
@@ -23,11 +23,11 @@ export default function Navigation() {
         <div className="md:hidden">
           <button
             type="button"
-            className="block text-gray-500 hover:text-white focus:text-white focus:outline-none"
+            className="text-gray-500 hover:text-white focus:text-white block focus:outline-none"
             onClick={toggleMenu}
           >
             <svg
-              className="h-6 w-6 fill-current"
+              className="fill-current h-6 w-6"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -49,9 +49,7 @@ export default function Navigation() {
             </svg>
           </button>
         </div>
-        <ul
-          className="hidden md:flex md:justify-between md:w-6/12"
-        >
+        <ul className="hidden md:flex md:w-6/12 md:justify-between">
           <li>
             <Button title="Menu" />
           </li>
@@ -68,35 +66,28 @@ export default function Navigation() {
             <Button title="Contacts" />
           </li>
         </ul>
-        <div className="block space-x-4 mr-16">
-          <LoginButton/>
-          <CartButton/>
+        <div className="mr-16 block space-x-4">
+          <LoginButton />
+          <CartButton />
         </div>
       </nav>
-      <ul
-          className={`${
-            isOpen ? "flex" : "hidden"
-          } md:hidden flex-col`}
-        >
-          <li>
-            <Button title="Menu" />
-          </li>
-          <li>
-            <Button title="Shop" />
-          </li>
-          <li>
-            <Button title="Restaurants" />
-          </li>
-          <li>
-            <Button title="Delivery" />
-          </li>
-          <li>
-            <Button title="Contacts" />
-          </li>
-        </ul>
+      <ul className={`${isOpen ? "flex" : "hidden"} flex-col md:hidden`}>
+        <li>
+          <Button title="Menu" />
+        </li>
+        <li>
+          <Button title="Shop" />
+        </li>
+        <li>
+          <Button title="Restaurants" />
+        </li>
+        <li>
+          <Button title="Delivery" />
+        </li>
+        <li>
+          <Button title="Contacts" />
+        </li>
+      </ul>
     </div>
   );
 }
-
-         
-

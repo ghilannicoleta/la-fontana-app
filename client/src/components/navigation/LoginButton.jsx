@@ -1,4 +1,4 @@
-import { FaUser} from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 export default function LoginButton() {
   return (
