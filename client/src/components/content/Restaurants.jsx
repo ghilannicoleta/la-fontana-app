@@ -13,7 +13,7 @@ export default function Restaurants({ city, number, address, hours }) {
         <div className="mt-1.5 grid justify-end gap-2">
           <button
             type="button"
-            className="h-[60px] w-[200px] rounded-lg border-2 border-solid font-bold border-colorYellow p-2 transition  hover:bg-colorYellow hover:text-stone hover:delay-200"
+            className="h-[60px] w-[200px] rounded-lg border-2 border-solid border-colorYellow p-2 font-bold transition  hover:bg-colorYellow hover:text-stone hover:delay-200"
           >
             BOOK NOW !
           </button>
