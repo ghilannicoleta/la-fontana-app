@@ -42,6 +42,9 @@ export default function ShowRestaurants() {
 
   return (
     <div className="grid grid-cols-1 gap-3">
+      <h1 className="flex justify-center text-4xl font-bold pt-16 mb-12">
+        Our restaurants
+      </h1>
       {infoRestaurats.map((el) => (
         <Restaurants
           city={el.city}

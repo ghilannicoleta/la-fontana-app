@@ -66,8 +66,8 @@ export default function Shop() {
 
   return (
     <div>
-      <div className="border-gray-500 mx-auto flex w-5/6 border-b pt-10 pb-4 text-4xl font-semibold">
-        Our products
+      <div className="mx-auto flex w-5/6 border-b pt-10 pb-4 text-4xl font-semibold">
+        Discover our products
       </div>
       <div className="mx-auto grid w-5/6 grid-cols-5 gap-1 pt-10">
         {producstList.map((item) => (
