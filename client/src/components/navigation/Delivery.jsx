@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Delivery() {
   return (
-    <div className="mx-auto grid w-8/12 pt-16">
+    <div className="mx-auto w-8/12 pt-16">
       <div className="flex justify-center text-4xl font-bold">
         Orders & delivery
       </div>
