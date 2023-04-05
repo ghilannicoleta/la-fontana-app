@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import logo from "../../assets/pizza.png";
+import LoginIcon from "../icons/LoginIcon";
+import CartIcon from "../icons/CartIcon";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,8 +67,12 @@ export default function Navigation() {
           </li>
         </ul>
         <div className="mr-16 block space-x-4">
-          <LoginButton />
-          <CartButton />
+          <Button title="Login">
+            <LoginIcon />
+          </Button>
+          <Button title="Cart">
+            <CartIcon />
+          </Button>
         </div>
       </nav>
       <ul className={`${isOpen ? "flex" : "hidden"} flex-col md:hidden`}>
