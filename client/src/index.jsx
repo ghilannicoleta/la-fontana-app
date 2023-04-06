@@ -9,6 +9,7 @@ import ShopPage from "./routes/ShopPage";
 import RestaurantsPage from "./routes/RestaurantsPage";
 import DeliveryPage from "./routes/DeliveryPage";
 import LoginPage from "./routes/LoginPage";
+import ContactsPage from "./routes/ContactsPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
   {
     path: "/delivery",
     element: <DeliveryPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "contacts",
+    element: <ContactsPage />,
     errorElement: <ErrorPage />,
   },
   {

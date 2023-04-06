@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 
 export default function Shop() {
@@ -66,13 +67,23 @@ export default function Shop() {
 
   return (
     <div>
-      <div className="border-gray-500 mx-auto flex w-5/6 border-b pt-10 pb-4 text-4xl font-semibold">
-        Our products
+      <div className="mx-auto flex w-5/6 border-b pt-10 pb-4 text-4xl font-semibold">
+        Discover our products
       </div>
       <div className="mx-auto grid w-5/6 grid-cols-5 gap-1 pt-10">
         {producstList.map((item) => (
           <ItemCard item={item} />
         ))}
+      </div>
+      <div className="flex justify-center pt-9">
+        <Link to="/menu">
+          <button
+            type="button"
+            className="rounded-lg border-2 border-solid border-colorYellow py-3 px-14 text-lg font-bold transition  hover:bg-colorYellow hover:text-stone hover:delay-200"
+          >
+            BACK TO MENU
+          </button>
+        </Link>
       </div>
     </div>
   );
