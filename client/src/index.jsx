@@ -10,6 +10,7 @@ import RestaurantsPage from "./routes/RestaurantsPage";
 import DeliveryPage from "./routes/DeliveryPage";
 import LoginPage from "./routes/LoginPage";
 import ContactsPage from "./routes/ContactsPage";
+import CartPage from "./routes/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,16 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/registration",
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
     errorElement: <ErrorPage />,
   },
 ]);
