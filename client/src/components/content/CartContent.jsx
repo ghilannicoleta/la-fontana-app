@@ -1,23 +1,14 @@
 import CartItem from "./CartItem";
 
-export default function CartContext() {
-  const productsOrder = [
-    {
-      src: "https://andys.md/public/menu/thumbs/version_150x100x1/fae8714cda041044bbeeee22fb1e9fe6.jpg",
-      title: "Pizza Margherita",
-      description:
-        "Pizza with ripe tomatoes sauce, fresh basil and mozzarella cheese.",
-      price: "95",
-    },
-    {
-      src: "https://andys.md/public/menu/thumbs/version_150x100x1/fae8714cda041044bbeeee22fb1e9fe6.jpg",
-      title: "Pizza Margherita",
-      description:
-        "Pizza with ripe tomatoes sauce, fresh basil and mozzarella cheese.",
-      price: "95",
-    },
-  ];
-
+export default function CartContext({ cartItems, removeFromCart }) {
+  const deliveryPrice = 10;
+  const calcSubtotal = () =>
+    cartItems.reduce(
+      (accumulator, currentValue) =>
+        accumulator +
+        currentValue.productCount * currentValue.productData.price,
+      0
+    );
   return (
     <div>
       <h1 className="px-4 pb-12 text-3xl"> 1 Items in your cart</h1>
@@ -31,19 +22,19 @@ export default function CartContext() {
           <div className="">Total:</div>
         </div>
       </div>
-      {productsOrder.map((produs) => (
-        <CartItem produs={produs} />
+      {cartItems.map((produs) => (
+        <CartItem produs={produs} removeFromCart={removeFromCart} />
       ))}
       <div className="text-1xl grid grid-cols-2 justify-items-center rounded-md border py-3">
         <div>
           <div>Subtotal</div>
-          <div>Total</div>
           <div>Delivery</div>
+          <div>Total</div>
         </div>
         <div>
-          <div>110 $</div>
-          <div>40 $</div>
-          <div>110 $</div>
+          <div>{calcSubtotal().toFixed(1)}$</div>
+          <div>{deliveryPrice} $</div>
+          <div>{(calcSubtotal() + deliveryPrice).toFixed(1)} $</div>
         </div>
       </div>
       <div className="flex justify-center pt-10">
