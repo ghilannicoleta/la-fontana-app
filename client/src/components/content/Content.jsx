@@ -1,3 +1,4 @@
+import { useContentContext } from "../../context/CartContext";
 import ItemCard from "./ItemCard";
 
 export default function Content() {
@@ -10,30 +11,45 @@ export default function Content() {
           alt: "pizza",
           title: "Pizza Margherita",
           price: 12.22,
+          img: "https://andys.md/public/menu/thumbs/version_150x100x1/fae8714cda041044bbeeee22fb1e9fe6.jpg",
+          description:
+            "Pizza with ripe tomatoes sauce, fresh basil and mozzarella cheese.",
         },
         {
           src: "https://www.andys.md/public/menu/thumbs/version_220x310x1/be45637985ce751c07c4bd2eeef1574e.jpg",
           alt: "pizza",
           title: "Pizza BBQ",
           price: 15.59,
+          img: "https://andys.md/public/menu/thumbs/version_150x100x1/847099313f957f839799decbedf961fa.jpg",
+          description:
+            "Pizza with chicken, salami, bacon and with barbecue sauce.",
         },
         {
           src: "https://www.andys.md/public/menu/thumbs/version_220x310x1/c4ef1b6501bc9e4f3fb71a23fd83c41c.jpg",
           alt: "pizza",
           title: "Pizza Capricciosa",
           price: 15.04,
+          img: "https://andys.md/public/menu/thumbs/version_150x100x1/733d47fc4ae9d42ad9c25d73494183a0.jpg",
+          description:
+            "Pizza with ham, pickled mushrooms, pickled eggplants, sheep outbuilding.",
         },
         {
           src: "https://www.andys.md/public/menu/thumbs/version_220x310x1/f494ff3debcec408b7f54a839dc56eef.jpg",
           alt: "pizza",
           title: "Pizza Neapolitan",
           price: 15.04,
+          img: "https://andys.md/public/menu/thumbs/version_150x100x1/733d47fc4ae9d42ad9c25d73494183a0.jpg",
+          description:
+            "Weathered dough for pizza, red sauce for pizza, ham, mushrooms, cheese, black and green olives.",
         },
         {
           src: "https://www.andys.md/public/menu/thumbs/version_220x310x1/d9d19417a969ec3b40068eeb7fa192c0.jpg",
           alt: "pizza",
           title: "Pizza Fattoria",
           price: 15.59,
+          img: "https://andys.md/public/menu/thumbs/version_150x100x1/63f8a0db76a7d55012f1d77e755543b7.jpg",
+          description:
+            "Pizza with chicken meat, champignons, butter, truffle oil and parmesan cheese.",
         },
       ],
     },
@@ -179,18 +195,40 @@ export default function Content() {
     },
   ];
 
+  const { selectedProducts, setSelectedProducts } = useContentContext();
+
+  const addToCart = (item) => {
+    const currentCartProducts = [...selectedProducts];
+    const productIndex = currentCartProducts.findIndex(
+      (el) => el.productData.title === item.title
+    );
+
+    if (productIndex > -1) {
+      currentCartProducts[productIndex].productCount += 1;
+    } else {
+      const productToAdd = {
+        productCount: 1,
+        productData: {
+          ...item,
+        },
+      };
+      currentCartProducts.push(productToAdd);
+    }
+
+    setSelectedProducts(currentCartProducts);
+  };
+
   return itemsList.map((product) => (
     <div className="mx-auto w-5/6">
       <div className="flex justify-between border-b pb-4 pt-10">
         <div className="text-4xl font-bold">{product.title}</div>
         <a href="replace" className="mt-4">
-          {" "}
           GO TO MENU {product.title.toUpperCase()}
         </a>
       </div>
       <div className="grid grid-cols-5 gap-1 pt-10">
         {product.products.map((item) => (
-          <ItemCard item={item} />
+          <ItemCard item={item} addToCart={addToCart} />
         ))}
       </div>
     </div>
