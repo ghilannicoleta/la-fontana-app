@@ -70,7 +70,7 @@ export default function Shop() {
       <div className="mx-auto flex w-5/6 border-b pt-10 pb-4 text-4xl font-semibold">
         Discover our products
       </div>
-      <div className="mx-auto grid w-5/6 grid-cols-5 gap-1 pt-10">
+      <div className="grid grid-cols-2 gap-4 pt-10 sm:grid-cols-5">
         {producstList.map((item) => (
           <ItemCard item={item} />
         ))}
