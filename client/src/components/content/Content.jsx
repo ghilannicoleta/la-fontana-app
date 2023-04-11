@@ -226,7 +226,7 @@ export default function Content() {
           GO TO MENU {product.title.toUpperCase()}
         </a>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 pt-10">
+      <div className="grid grid-cols-2 gap-4 pt-10 sm:grid-cols-5">
         {product.products.map((item) => (
           <ItemCard item={item} addToCart={addToCart} />
         ))}
