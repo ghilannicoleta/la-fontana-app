@@ -12,6 +12,7 @@ import LoginPage from "./routes/LoginPage";
 import ContactsPage from "./routes/ContactsPage";
 import CartPage from "./routes/CartPage";
 import ContentProvider from "./context/CartContext";
+import SignUpPage from "./routes/SignUpPage";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/registration",
-    element: <LoginPage />,
+    element: <SignUpPage />,
     errorElement: <ErrorPage />,
   },
   {
