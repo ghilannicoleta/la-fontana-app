@@ -76,7 +76,7 @@ export default function Navigation() {
           </Button>
         </div>
       </nav>
-      <ul className={`${isOpen ? "flex" : "hidden"} flex-col md:hidden`}>
+      <ul className={`${isOpen ? "flex" : "hidden"} flex-col pl-14 md:hidden`}>
         <li>
           <Button title="Menu" />
         </li>
