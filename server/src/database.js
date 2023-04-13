@@ -1,13 +1,15 @@
 import mongoose from "mongoose";
+import { createProductsTable } from "./baseColections.js";
 
-export default function initDb() {
+export default async function initDb() {
   mongoose
     .connect(process.env.MONGODB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => {
+    .then(async () => {
       console.log("Successfully connect to MongoDB.");
+      await createProductsTable();
     })
     .catch((err) => {
       console.error("Connection error", err);
