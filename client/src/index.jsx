@@ -13,6 +13,7 @@ import ContactsPage from "./routes/ContactsPage";
 import CartPage from "./routes/CartPage";
 import ContentProvider from "./context/CartContext";
 import SignUpPage from "./routes/SignUpPage";
+import PizzaPage from "./routes/PizzaPage";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/pizza",
+    element: <PizzaPage />,
     errorElement: <ErrorPage />,
   },
 ]);
