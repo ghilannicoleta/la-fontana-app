@@ -52,6 +52,28 @@ app.post("/api/cart", async (req, res) => {
     .send(saveItem);
 });
 
+app.get("/api/cart", async (req, res) => {
+  const productsCart = new CartService();
+  const cart = await productsCart.getAllCart();
+  res
+    .header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    )
+    .send(cart);
+});
+
+app.delete("/api/cart", async (req, res) => {
+  const productsCart = new CartService();
+  const cart = await productsCart.deleteFromCart(req.body);
+  res
+    .header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    )
+    .send(cart);
+});
+
 app.get("/api/products", async (req, res) => {
   const productService = new ProductService();
   const products = await productService.getAllProducts();

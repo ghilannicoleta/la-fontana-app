@@ -3,7 +3,7 @@ import Cart from "../models/cart.js";
 export default class CartService {
   async addToCart(item) {
     try {
-      const cart = await Cart.findOneAndUpdate(
+      const cartItem = await Cart.findOneAndUpdate(
         {
           "productData.title": item.title,
         },
@@ -11,7 +11,7 @@ export default class CartService {
           $inc: { productCount: 1 },
         }
       );
-      if (!cart) {
+      if (!cartItem) {
         const productToAdd = {
           productCount: 1,
           productData: {
@@ -27,10 +27,30 @@ export default class CartService {
           .catch((error) => console.log(error));
         return newCartItem;
       }
-      return cart;
+      return cartItem;
     } catch (error) {
       console.log(error);
       throw new Error(`Error adding cart: ${error.message}`);
+    }
+  }
+
+  async getAllCart() {
+    try {
+      const cart = await Cart.find({});
+      return cart;
+    } catch (error) {
+      throw new Error(`Error get cart: ${error.message}`);
+    }
+  }
+
+  async deleteFromCart(item) {
+    try {
+      const cart = await Cart.findOneAndDelete({
+        "productData.title": item.title,
+      });
+      return await this.getAllCart();
+    } catch (error) {
+      throw new Error(`Error delete cart: ${error.message}`);
     }
   }
 }
