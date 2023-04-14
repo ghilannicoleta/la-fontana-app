@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 // import { useState, useEffect } from "react";
 import { useState, useEffect } from "react";
 import { useContentContext } from "../../context/CartContext";
@@ -27,9 +28,11 @@ export default function Content() {
     <div className="mx-auto w-5/6">
       <div className="flex justify-between border-b pb-4 pt-10">
         <div className="text-4xl font-bold">{product.title}</div>
-        <a href="replace" className="mt-4">
-          GO TO MENU {product.title.toUpperCase()}
-        </a>
+        <Link to="/pizza">
+          <a href="replace" className="mt-4">
+            GO TO MENU {product.title.toUpperCase()}
+          </a>
+        </Link>
       </div>
       <div className="grid grid-cols-2 gap-4 pt-10 sm:grid-cols-5">
         {product.products.map((item) => (
